@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+}
+
+div{
+}
+
+h1{
+    margin: 0;
+    /*margins take away from things around element (pushes them away), padding increases size of element */
+    font-family: 'Sacramento', cursive
+}
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.top-container{
+    background-color: #E4F9F5;
+    position: relative;
+    padding-top: 100px;
+}
+
+.middle-container{
+}
+
+.bottom-container{
+}
+
+.skill-row-image{
+    width: 50px;
+    height: 50px;
+}
+
+/*
+Notes:
+----------------------------------------
+The margin clears an area around an element (outside the border), but the padding clears an area around the content (inside the border) of an element. 
+Display:
+    block - takes up whole width of screen (such as paragrapgh, headers, div, etc.)
+    inline - display element that only takes up as much space as it needs to (such as span, images, anchors). With inline elements you cannot change the width as you can with block elements
+    inline-block - display element that gives you the best of both worlds, let's you change its width and does not take up the entire line
+    none - gets rid of the element from the website as if it didn't exist
+Visibility:
+    Can set this property to hidden to make the element disappear but unlike display: none it keeps its shape and size in the document just blanked out
+Position:
+    static - all html elements are static by default (go along by default html rules)
+    relative - position element selected relative to how it would've been positioned if it was static
+            can do like position:relative; left: 30px; to shift it 30 px to the left
+            has top, bottom, left, and right properties to move the element
+            when you move an element with relative, it does not impact other elements on the screen, its static position is what other elements warp around, not its relative position
+                this means that it can move over other elements and stuff
+    absolute - positioning the element relative to its parent; so if you do right: 30px you get it shifted 30px from the right of the parent - adding a margin to its parent element
+        absolute positioning does impact the flow of your document - you are taking the element out of the flow of html
+        the element you take out of the flow does not impact how the rest of the document is laid out
+        the absolute positioning applies to the closest parent with relative positioning
+    fixed - element will stay in the position if you scroll through the webpage, does not scroll with the rest of the document
+Text-align:
+    this is set in the parent of the element you are looking to position
+    this works as long as we have inline elements or full width block elements; if we change the width of a block element without changing the display property it will not center or whatever alignment 
+
+margin contains an auto property that can be used to center (margin: 0 auto 0 auto will center a block element with a specified width; margin: top right bottom left; can also shorthand as margin: 0 auto which sets top and bottom in the same stanza and left and right in the same stanza)
+
+Font-family:
+    this set in the body changes the family for the whole document
+    monospace does the same amount of space per letter - used in code blocks a lot
+    default we have a serif font - sans-serif gets rid of the feet
+    doing something like font-family: verdana, sans-serif; tries to set verdana first then if that doesn't exist in the browser will just default to sans-serif browser default
+    there is a set of "web safe fonts" that have a higher chance of being rendered across the board on all operating systems
+    cssfontstack.com
+
+Font embedding  (fonts.google.com) allows you to embed fonts in your website so that it appears the same to everyone even if they don't have that font installed that will tell browsers where to go get them from
+*/
