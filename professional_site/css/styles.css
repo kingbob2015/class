@@ -8,17 +8,27 @@ div{
 }
 
 h1{
-    margin: 0;
+    margin: 50px auto 0 auto;
     /*margins take away from things around element (pushes them away), padding increases size of element */
-    font-family: 'Sacramento', cursive
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;
+    color: #66BFBF;
 }
 
 h2{
     font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #66BFBF;
+    font-weight: normal;
 }
 
 h3{
     font-family: 'Montserrat', sans-serif;
+    color: #11999E;
+}
+
+a{
+    color: #11999E;
 }
 
 .top-container{
@@ -34,14 +44,24 @@ h3{
 }
 
 .skill-row-image{
-    width: 50px;
-    height: 50px;
+    width: 25%;
+}
+
+.skill-row{
+    width: 50%;
+    margin: 100px auto 100px auto;
+    text-align: left;
+    line-height: 2;
 }
 
 /*
 Notes:
 ----------------------------------------
 The margin clears an area around an element (outside the border), but the padding clears an area around the content (inside the border) of an element. 
+Setting margin to auto will set the margin equal on sides (center item)
+
+width % is based on parent size
+
 Display:
     block - takes up whole width of screen (such as paragrapgh, headers, div, etc.)
     inline - display element that only takes up as much space as it needs to (such as span, images, anchors). With inline elements you cannot change the width as you can with block elements
@@ -76,4 +96,21 @@ Font-family:
     cssfontstack.com
 
 Font embedding  (fonts.google.com) allows you to embed fonts in your website so that it appears the same to everyone even if they don't have that font installed that will tell browsers where to go get them from
+
+Font-size
+    pixel size is static 
+    Dynamic size will rescale with change of page
+    100% is equivalent to 16px
+    Can also use a unit called em for dynamic size
+    1em is 16px
+    16px = 100% = 1em
+    With zoom it doesn't actually matter if you have static or dynamic sizing it scales everything
+    Dynamic font-size is inherited: if a child has 2em and parent has 1em we get additive sizing: same with percentages
+    In CSS3 we have rem unit - this is root em. This ignores parent em's and instead sets it relative to the root element
+
+Float
+    On imnages, float will make text wrap arround it
+
+Clear
+    When used on text, makes it so text can override wrapping from float (make sure that margin x is clear and not wrapped)
 */
