@@ -30,19 +30,28 @@ h3{
 a{
     color: #11999E;
 }
+p{
+    color: #40514E;
+    line-height: 2;
+}
 
 .hello-text{
     width: 50%;
-    margin: auto;
-    line-height: 2;
+    margin: 80px auto 100px auto;
 }
+
+.closing-text{
+    width: 50%;
+    margin: auto;
+}
+
 .dotted-hr{
-    width: 15%;
+    width: 5%;
     border-style: none;
     border-top-style: dotted;
     border-color: grey;
-    border-width: 10px;
-    margin-top: 1.83em;
+    border-width: 6px;
+    margin-bottom: 100px;
 }
 
 .top-container{
@@ -52,22 +61,43 @@ a{
 }
 
 .middle-container{
-    color: #40514E;
+    background-color: white;
 }
 
 .bottom-container{
-    color: #40514E;
+    background-color: #66BFBF;
+    line-height: 2;
+    padding: 25px;
 }
 
 .skill-row-image{
-    width: 25%;
+    width: 15%;
 }
 
 .skill-row{
     width: 50%;
     margin: 100px auto 100px auto;
     text-align: left;
-    line-height: 2;
+}
+
+.btn{
+    background-color: #66BFBF;
+    border-radius: 5px;
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+    margin: 50px auto;
+    display: inline-block;
+}
+.footer-link{
+    text-decoration: none;
+    font-weight: bold;
+    color: #11999E;
+    padding: 15px;
+}
+
+.footer-link:hover{
+    color: #EAF6F6;
 }
 
 /*
@@ -129,4 +159,6 @@ Float
 
 Clear
     When used on text, makes it so text can override wrapping from float (make sure that margin x is clear and not wrapped)
+
+https://www.css3buttongenerator.com/
 */
