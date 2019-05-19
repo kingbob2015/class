@@ -31,16 +31,32 @@ a{
     color: #11999E;
 }
 
+.hello-text{
+    width: 50%;
+    margin: auto;
+    line-height: 2;
+}
+.dotted-hr{
+    width: 15%;
+    border-style: none;
+    border-top-style: dotted;
+    border-color: grey;
+    border-width: 10px;
+    margin-top: 1.83em;
+}
+
 .top-container{
-    background-color: #E4F9F5;
+    background-color: #EAF6F6;
     position: relative;
     padding-top: 100px;
 }
 
 .middle-container{
+    color: #40514E;
 }
 
 .bottom-container{
+    color: #40514E;
 }
 
 .skill-row-image{
