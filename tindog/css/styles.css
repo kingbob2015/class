@@ -95,7 +95,7 @@ body {
     margin: 20px;
 }
 
-.carousel-item{
+.carousel-item {
     padding: 7% 15%;
 }
 
@@ -109,4 +109,32 @@ body {
 .press-image {
     width: 15%;
     margin: 20px 20px 50px;
+}
+
+/*Pricing Section*/
+#pricing {
+    padding: 100px;
+    text-align: center;
+}
+
+.pricing-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 900;
+}
+
+.pricing-header {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.pricing-subheader {
+    font-family: "Montserrat";
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.pricing-column {
+    padding: 3% 2%;
 }
