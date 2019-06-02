@@ -4,7 +4,7 @@ body {
 
 
 .container-fluid {
-    padding: 3% 15%
+    padding: 3% 15% 7%
 }
 
 .subheading-title {
@@ -47,13 +47,18 @@ body {
 
 /*Title Image*/
 .title-image {
-    width: 60%;
+    width: 23rem;
     transform: rotate(25deg);
+    position: absolute;
+    right: 30%;
 }
 
 /*Feature Callout Headings*/
 #features {
-    padding: 7% 15%
+    padding: 7% 15%;
+    background-color: white;
+    position: relative;
+    z-index: 1;
 }
 
 .callout-heading {
