@@ -47,7 +47,7 @@ body {
 
 /*Title Image*/
 .title-image {
-    width: 23rem;
+    width: 50%;
     transform: rotate(25deg);
     position: absolute;
     right: 30%;
@@ -142,4 +142,14 @@ body {
 
 .pricing-column {
     padding: 3% 2%;
+}
+
+@media (max-width: 1028px){
+    #title{
+        text-align: center;
+    }
+    .title-image{
+        position: static;
+        transform: rotate(0)
+    }
 }
