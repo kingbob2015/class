@@ -2,10 +2,28 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
 
 .container-fluid {
-    padding: 3% 15% 7%
+    padding: 7% 15%
 }
+
+/*Sections Section*/
+.colored-section{
+    background-color: #ff4c48;
+    color:white
+}
+
+.white-section{
+    background-color: #fff;
+}
+
+
+/*Title Section*/
 
 .subheading-title {
     font-family: 'Montserrat', sans-serif;
@@ -14,10 +32,10 @@ body {
     font-weight: 900;
 }
 
-#title {
-    background-color: #ff4c68;
-    color: white
+#title .container-fluid{
+    padding: 3% 15% 7%;
 }
+
 
 /*Navigation Bar*/
 .navbar {
@@ -55,14 +73,11 @@ body {
 
 /*Feature Callout Headings*/
 #features {
-    padding: 7% 15%;
-    background-color: white;
     position: relative;
     z-index: 1;
 }
 
 .callout-heading {
-    font-weight: 600;
     font-size: 1.5rem;
 }
 
@@ -89,8 +104,6 @@ body {
 }
 
 .testimonial-header {
-    font-family: "Montserrat";
-    font-weight: 600;
     line-height: 1.5;
 }
 
@@ -135,8 +148,6 @@ body {
 }
 
 .pricing-subheader {
-    font-family: "Montserrat";
-    font-weight: 600;
     line-height: 1.5;
 }
 
@@ -152,4 +163,26 @@ body {
         position: static;
         transform: rotate(0)
     }
+}
+
+/*CTA Section*/
+#cta{
+    text-align: center;
+}
+.cta-header{
+    line-height: 1.5;
+    font-size: 3.5rem;
+    color: white;
+}
+
+/*Footer Section*/
+#footer{
+    text-align: center;
+}
+.footer-icon{
+    color: black;
+    margin: 10% 1.5% 2%
+}
+.footer-copyright {
+    color: #8f8f8f;
 }

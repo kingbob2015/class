@@ -9,6 +9,8 @@ Can change layout grid behavior of diff screen sizes by specifying multiple resp
 Containers useful for horizontally centering or padding out content. It is automatically responsive to changing max width to different screen sizes
 Fluid containers take 100% of the width but fluidly adapts to always take up 100% of screen width as opposed to normal containers which have jumpy breakpoints
 
+Quick version: .container has one fixed width for each screen size in bootstrap (xs,sm,md,lg); .container-fluid expands to fill the available width.
+
 fontawesome.com - over 900 free commercial use icons. Uses i (italics) or span tag which is okay sense icons can't be italic.
 
 aria-hidden attribute make screen readers for visually impaired people skip over reading off that button name. 
@@ -19,6 +21,23 @@ bootsnipp.com for bootstrap examples and snippits
 An element that is not positioned as relative or absolute but is static will not be impacted by the z index. z is by default 0.
 
 CSS media queries allow you to impact your website only under certain conditions such as under @media print { h1{} ...} or @media screen{} or @media speech{}... @media type feature.....@media screen (min-width: 900px){}....@media (max-width: 900px) <- website is being displayed where the max width is 900px then inside the {} can define how things are displayed on the tablet or smaller size.....@media (min-width: 900px) and (max-width: 1000px){}
+
+Since I use bootstrap frequently, my default base size is in pixels. I use percent to set the width and height of images, containers and divs, ems and rems for typography and elements related to typography such as margin, padding etc.
+
+Combining selectors:
+    - multiple selectors
+        selector1, selector2, selector3 {}
+    - hierarchical selectors
+        parentSelector childSelector {}
+    - combined selectors
+        selector1.selector2{}
+        selector1#selector2{}
+        example: h1#myClass
+                div.container-fluid
+        selector1 that has an id or class of selector 2
+        can chain further "selector1.selector2#selector3.selector4....."
+
+Avoid inline styles at all costs, use id's very sparingly
 -->
 
 <!DOCTYPE html>
@@ -41,7 +60,7 @@ CSS media queries allow you to impact your website only under certain conditions
 
 <body>
 
-    <section id="title">
+    <section id="title" class="colored-section">
         <div class="container-fluid">
 
             <!-- Nav Bar -->
@@ -49,16 +68,16 @@ CSS media queries allow you to impact your website only under certain conditions
                 <a class="navbar-brand" href="">tindog</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle00" aria-controls="navbarToggle00" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
-                <div id="navbarToggle00" class="collapse navbar-collapse">
+                <div id="navbarToggle00" class="collapse navbar-collapse" style="text-align: left">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="">Contact</a>
+                            <a class="nav-link" href="#footer">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Pricing</a>
+                            <a class="nav-link" href="#pricing">Pricing</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Download</a>
+                            <a class="nav-link" href="#cta">Download</a>
                         </li>
                     </ul>
                 </div>
@@ -82,7 +101,7 @@ CSS media queries allow you to impact your website only under certain conditions
 
     <!-- Features -->
 
-    <section id="features">
+    <section id="features" class="white-section">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-4 text-center">
@@ -107,38 +126,39 @@ CSS media queries allow you to impact your website only under certain conditions
 
     <!-- Testimonials -->
 
-    <section id="testimonials">
-        <div id="testimonial-carousel" class="carousel slide" data-ride="false">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <h2 class="testimonial-header">I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.</h2>
-                    <img src="images/dog-img.jpg" alt="dog-profile" class="testimonial-image">
-                    <em>Pebbles, New York</em>
-                </div>
-                <div class="carousel-item">
-                    <h2 class="testimonial-header">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
-                    <img class="testimonial-image" src="images/lady-img.jpg" alt="lady-profile">
-                    <em>Beverly, Illinois</em>
-                </div>
+    <section id="testimonials" class="colored-section">
+        <div class="container-fluid">
+            <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active container-fluid">
+                        <h2 class="testimonial-header">I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.</h2>
+                        <img src="images/dog-img.jpg" alt="dog-profile" class="testimonial-image">
+                        <em>Pebbles, New York</em>
+                    </div>
+                    <div class="carousel-item container-fluid">
+                        <h2 class="testimonial-header">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
+                        <img class="testimonial-image" src="images/lady-img.jpg" alt="lady-profile">
+                        <em>Beverly, Illinois</em>
+                    </div>
 
 
+                </div>
+                <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-
     </section>
 
 
     <!-- Press -->
 
-    <section id="press">
+    <section id="press" class="colored-section">
         <img src="images/techcrunch.png" alt="tc-logo" class="press-image">
         <img src="images/tnw.png" alt="tnw-logo" class="press-image">
         <img src="images/bizinsider.png" alt="biz-insider-logo" class="press-image">
@@ -149,7 +169,7 @@ CSS media queries allow you to impact your website only under certain conditions
 
     <!-- Pricing -->
 
-    <section id="pricing">
+    <section id="pricing" class="white-section">
         <h2 class="pricing-title">A Plan for Every Dog's Needs</h2>
         <p>Simple and affordable price plans for your and your dog.</p>
 
@@ -205,21 +225,22 @@ CSS media queries allow you to impact your website only under certain conditions
 
     <!-- Call to Action -->
 
-    <section id="cta">
-
-        <h3>Find the True Love of Your Dog's Life Today.</h3>
-        <button type="button">Download</button>
-        <button type="button">Download</button>
-
+    <section id="cta" class="colored-section">
+        <div class="container-fluid">
+            <h3 class="cta-header">Find the True Love of Your Dog's Life Today.</h3>
+            <button type="button" class="btn btn-dark btn-lg download-button"><i class="fab fa-apple"></i> Download</button>
+            <button type="button" class="btn btn-light btn-lg download-button"><i class="fab fa-google-play"></i> Download</button>
+        </div>
     </section>
 
 
     <!-- Footer -->
 
-    <footer id="footer">
-
-        <p>© Copyright 2018 TinDog</p>
-
+    <footer id="footer" class="white-section">
+        <div class="container-fluid">
+            <span><i class="fab fa-twitter footer-icon"></i><i class="fab fa-facebook footer-icon"></i><i class="fab fa-instagram footer-icon"></i><i class="fas fa-envelope footer-icon"></i></span>
+            <p class="footer-copyright">© Copyright 2018 TinDog</p>
+        </div>
     </footer>
 
     <!-- Optional JavaScript -->
