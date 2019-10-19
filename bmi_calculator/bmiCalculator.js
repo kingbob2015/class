@@ -9,8 +9,8 @@ app.get("/", function(req, res){
 });
 
 app.post("/bmicalculator", function(req, res){
-    var h = Number(req.body.height);
-    var w = Number(req.body.weight);
+    var h = parseFloat(req.body.height);
+    var w = parseFloat(req.body.weight);
 
     h = h/100;
 
