@@ -1,1 +1,3 @@
 any-api.com
+mailchimp - mailing list
+heroku - deploy web server
