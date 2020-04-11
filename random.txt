@@ -1,3 +1,4 @@
 any-api.com
 mailchimp - mailing list
 heroku - deploy web server
+lodash - really useful library full of fun functions
