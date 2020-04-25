@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     password: String
 })
 
-
+//In Heroku you set config vars that are ingested in the .env package as env vars
 userSchema.plugin(encrypt, { secret: process.env.SECRET, encryptedFields: ["password"] });
 
 const User = new mongoose.model("User", userSchema);
