@@ -32,7 +32,8 @@ mongoose.set("useCreateIndex", true)
 const userSchema = new mongoose.Schema({
     email: String,
     password: String,
-    googleId: String
+    googleId: String,
+    secret: String
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -78,6 +79,32 @@ app.get('/auth/google/secrets',
     function (req, res) {
         res.redirect('/secrets');
     });
+
+app.route("/submit")
+    .get((req, res) => {
+        //Accessing the req.isAuthenticated requires cookies being set for the session
+        if (req.isAuthenticated()) {
+            res.render("submit");
+        } else {
+            res.redirect("/login")
+        }
+    })
+    .post((req, res) => {
+        const submittedSecret = req.body.secret;
+
+        User.findById(req.user.id, (err, foundUser) => {
+            if (err) {
+                console.log(err)
+            } else {
+                if (foundUser) {
+                    foundUser.secret = submittedSecret
+                    foundUser.save(() => {
+                        res.redirect("/secrets")
+                    })
+                }
+            }
+        })
+    })
 //Login and register routes only used when Google button is not the method
 app.route("/login")
     .get((req, res) => {
@@ -123,12 +150,15 @@ app.route("/register")
     })
 
 app.get("/secrets", (req, res) => {
-    //Accessing the req.isAuthenticated requires cookies being set for the session
-    if (req.isAuthenticated()) {
-        res.render("secrets");
-    } else {
-        res.redirect("/login")
-    }
+    User.find({ "secret": { $ne: null } }, (err, foundUsers) => {
+        if (err) {
+            console.log(err)
+        } else {
+            if (foundUsers) {
+                res.render("secrets", { usersWithSecrets: foundUsers })
+            }
+        }
+    })
 })
 
 app.get("/logout", (req, res) => {
